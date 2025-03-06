@@ -520,6 +520,6 @@ def home():
    
 
 # The home route remains the same...
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Get PORT from Render, default to 5000 for local testing
+    app.run(host="0.0.0.0", port=port)
